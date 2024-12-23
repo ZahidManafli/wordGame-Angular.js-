@@ -1,0 +1,70 @@
+<div class="main-container">
+  <div class="container">
+    <div class="header">
+      <h1>Word Game</h1>
+    </div>
+    <div class="game-beginning">
+      <div *ngIf="!gameStart" class="time">
+        <span>Time</span>
+      </div>
+      <div *ngIf="gameStart" class="time" [class.gameStart]="gameStart">
+        <span>Time {{ time }}</span>
+      </div>
+      <div class="score"><span>Score : {{score}}</span></div>
+      <button (click)="startGame()" class="start-btn"><span>Start</span></button>
+    </div>
+    <div class="main-game">
+      <div class="game-rule">
+        <h4>How To Play</h4>
+        <ul>
+          <li>Click the start button to begin</li>
+          <li>Finds as many words as you can</li>
+          <li>You have only 30 seconds for each word</li>
+          <li>If you want to change the word, click the "Next Word" button</li>
+        </ul>
+      </div>
+      <div class="game-part">
+        <div class="inputs">
+          <input *ngIf="!gameStart" type="text" class="user-input-beginning" disabled />
+          <ng-container *ngIf="gameStart">
+            <ng-container *ngFor="let item of array">
+              <input type="text" class="user-input-game-time" value={{item}} disabled>
+            </ng-container>
+          </ng-container>
+        </div>
+        <div class="alphabet-container">
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">a</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">b</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">c</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">d</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">e</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">f</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">g</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">h</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">i</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">j</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">k</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">l</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">m</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">n</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">o</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">p</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">q</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">r</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">s</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">t</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">u</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">v</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">w</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">x</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">y</button>
+          <button (click)="handleinputField($event)" [class.gameStart]="gameStart">z</button>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="next-word" (click)="chooseRandomWord()">Next Word</button>
+        <div class="hint" id="hint"><span>Hint {{currentHint}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>
