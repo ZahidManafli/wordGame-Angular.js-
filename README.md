@@ -1,3 +1,6 @@
+#DEPLOY LINK
+word-game-angular-9t92xvegr-zahids-projects-a050876b.vercel.app
+
 # WordGame
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
